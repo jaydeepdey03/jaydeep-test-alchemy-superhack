@@ -77,9 +77,10 @@ export default function Dashboard() {
           const client = await createLightAccountAlchemyClient({
             signer: privySigner,
             chain: sepolia,
-            apiKey: process.env.NEXT_PUBLIC_ALCHEMY_API_KEY!,
-            version: "v2.0.0",
+            // apiKey: process.env.NEXT_PUBLIC_ALCHEMY_API_KEY!,
+            rpcUrl: `https://eth-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`,
           });
+          console.log(client, "fucku");
           setAlchemyClient(client);
         } catch (err: any) {
           console.log(err.message, "error in createLightAccountAlchemyClient");
@@ -88,7 +89,7 @@ export default function Dashboard() {
     }
   }, [privySigner, eip1193PrivyProvider, embeddedWallet, ready]);
 
-  console.log(privySigner, "privysigner");
+  console.log(alchemyClient, "alchemyClient");
 
   return (
     <div className="h-screen w-full flex justify-center items-center flex-col">
