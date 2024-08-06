@@ -1,5 +1,6 @@
 import {
     AlchemyAccountsUIConfig,
+    cookieStorage,
     createConfig,
 } from "@account-kit/react";
 import { sepolia } from "@account-kit/infra";
@@ -7,10 +8,10 @@ import { sepolia } from "@account-kit/infra";
 import { QueryClient } from "@tanstack/react-query";
 
 const uiConfig: AlchemyAccountsUIConfig = {
-    illustrationStyle: "outline",
+    illustrationStyle: "linear",
     auth: {
         sections: [[{ type: "email" as const }], [{ type: "passkey" as const }]],
-        addPasskeyOnSignup: false,
+        addPasskeyOnSignup: true,
     },
 };
 
@@ -18,7 +19,8 @@ export const config = createConfig(
     {
         apiKey: `${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY!}`,
         chain: sepolia,
-        ssr: false,
+        ssr: true,
+        storage: cookieStorage,
     },
     uiConfig
 );
