@@ -9,10 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@alchemy/aa-accounts": "^3.19.0",
-    "@alchemy/aa-alchemy": "^3.19.0",
-    "@alchemy/aa-core": "^3.19.0",
-    "@privy-io/react-auth": "^1.76.6",
+    "@account-kit/core": "^4.0.0-alpha.7",
+    "@account-kit/infra": "^4.0.0-alpha.7",
+    "@account-kit/react": "^4.0.0-alpha.7",
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-slot": "^1.1.0",
     "@tanstack/react-query": "^5.51.21",
@@ -24,8 +23,7 @@
     "react-dom": "^18",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
-    "viem": "^2.18.7",
-    "wagmi": "^2.12.2"
+    "viem": "^2.18.8"
   },
   "devDependencies": {
     "@types/node": "^20",
